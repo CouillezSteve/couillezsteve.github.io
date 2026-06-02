@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <!--
   ════════════════════════════════════════════════════════════════
-  CV / PORTFOLIO — Développeur Web & Web Mobile
+  CV / PORTFOLIO — Steve Couillez · Développeur Web & Web Mobile
   ────────────────────────────────────────────────────────────────
-  COMMENT REMPLIR :
-   1. Cherche tous les blocs marqués  >>> À REMPLIR <<<  et remplace
-      le texte entre crochets [ ... ] par tes vraies infos.
-   2. Remplace les liens href="#" par tes vraies URL (email, GitHub...).
-   3. Pour le bouton "CV PDF" : dépose ton PDF à côté de ce fichier et
-      remplace href="#cv-pdf" par href="cv.pdf".
-
-  COMMENT HÉBERGER (GitHub Pages) :
-   1. Crée un dépôt GitHub (ex: prenom-nom).
-   2. Ajoute ce fichier mais RENOMME-LE en  index.html
-   3. Onglet Settings > Pages > Source : branche "main", dossier "/root".
-   4. Ton site sera en ligne sur https://TON-PSEUDO.github.io/NOM-DEPOT/
+  À VÉRIFIER / COMPLÉTER :
+   - Cherche les [crochets] restants et complète-les.
+   - Remplace les liens href="#" par tes vraies URL (démos / dépôts).
+   - Pour le projet GMC, précise en une phrase ce que fait le site.
+  POUR METTRE À JOUR LE SITE :
+   - Édite ce fichier sur GitHub (icône crayon) ou ré-uploade-le.
+   - Garde bien le nom  index.html . Pages redéploie tout seul (~1 min).
   ════════════════════════════════════════════════════════════════
 -->
 <html lang="fr">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>[Prénom Nom] — Développeur Web &amp; Web Mobile</title>
-<meta name="description" content="CV en ligne de [Prénom Nom], en formation Développeur Web & Web Mobile." />
+<title>Steve Couillez — Développeur Web &amp; Web Mobile</title>
+<meta name="description" content="CV en ligne de Steve Couillez, en formation Développeur Web & Web Mobile." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,7 +54,6 @@
     position:relative;
   }
 
-  /* ── Ambiance : grille + halo + grain ── */
   body::before{
     content:"";position:fixed;inset:0;z-index:-2;
     background:
@@ -84,7 +78,6 @@
   .mono{font-family:var(--font-mono);font-weight:500}
   .accent{color:var(--accent)}
 
-  /* ── Nav ── */
   header.nav{
     position:sticky;top:0;z-index:50;
     backdrop-filter:blur(14px);
@@ -99,15 +92,8 @@
   .nav-links a:hover{color:var(--text)}
   .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--accent);transition:width .25s}
   .nav-links a:hover::after{width:100%}
-  .btn-pdf{
-    border:1px solid var(--border-strong);border-radius:999px;
-    padding:8px 16px !important;color:var(--text)!important;font-size:.82rem;
-    font-family:var(--font-mono);transition:.2s;
-  }
-  .btn-pdf:hover{background:var(--accent);color:#000!important;border-color:var(--accent)}
   .burger{display:none;background:none;border:0;color:var(--text);font-size:1.4rem;cursor:pointer}
 
-  /* ── Hero ── */
   .hero{padding:clamp(70px,12vw,150px) 0 80px}
   .eyebrow{
     font-family:var(--font-mono);font-size:.8rem;color:var(--accent);
@@ -135,7 +121,6 @@
   .socials a{color:var(--muted);font-family:var(--font-mono);font-size:.85rem;transition:.2s}
   .socials a:hover{color:var(--accent)}
 
-  /* ── Terminal ── */
   .terminal{
     margin-top:54px;border:1px solid var(--border);border-radius:14px;overflow:hidden;
     background:var(--surface);box-shadow:0 30px 60px -30px rgba(0,0,0,.8);max-width:620px;
@@ -153,39 +138,27 @@
   .cursor{display:inline-block;width:9px;height:1.05em;background:var(--accent);vertical-align:-2px;animation:blink 1s steps(1) infinite}
   @keyframes blink{50%{opacity:0}}
 
-  /* ── Sections ── */
   section{padding:86px 0;border-top:1px solid var(--border)}
   .sec-tag{font-family:var(--font-mono);color:var(--accent);font-size:.82rem;letter-spacing:1px;margin-bottom:14px}
   .sec-title{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:700;letter-spacing:-.02em;margin-bottom:36px}
 
-  /* À propos */
   .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start}
   .about-grid p{color:var(--muted);font-size:1.08rem;margin-bottom:18px}
   .about-grid p strong{color:var(--text);font-weight:600}
   .facts{display:flex;flex-direction:column;gap:14px}
-  .fact{
-    border:1px solid var(--border);border-radius:12px;padding:18px 20px;background:var(--surface);
-  }
+  .fact{border:1px solid var(--border);border-radius:12px;padding:18px 20px;background:var(--surface)}
   .fact .k{font-family:var(--font-mono);font-size:.74rem;color:var(--accent);letter-spacing:1px;text-transform:uppercase}
   .fact .v{font-size:1.02rem;margin-top:4px}
 
-  /* Compétences */
   .skill-block{margin-bottom:30px}
   .skill-block h3{font-family:var(--font-mono);font-size:.85rem;color:var(--muted);font-weight:500;margin-bottom:14px;letter-spacing:1px}
   .chips{display:flex;flex-wrap:wrap;gap:10px}
-  .chip{
-    border:1px solid var(--border);background:var(--surface);border-radius:999px;
-    padding:9px 18px;font-family:var(--font-mono);font-size:.86rem;transition:.2s;cursor:default;
-  }
+  .chip{border:1px solid var(--border);background:var(--surface);border-radius:999px;padding:9px 18px;font-family:var(--font-mono);font-size:.86rem;transition:.2s;cursor:default}
   .chip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
   .chip.learning{border-style:dashed;color:var(--muted)}
 
-  /* Projets */
   .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
-  .card{
-    border:1px solid var(--border);border-radius:16px;background:var(--surface);
-    padding:26px;transition:.25s;position:relative;overflow:hidden;
-  }
+  .card{border:1px solid var(--border);border-radius:16px;background:var(--surface);padding:26px;transition:.25s;position:relative;overflow:hidden}
   .card::before{content:"";position:absolute;inset:0;background:var(--accent-dim);opacity:0;transition:.25s}
   .card:hover{transform:translateY(-5px);border-color:var(--border-strong)}
   .card:hover::before{opacity:1}
@@ -199,20 +172,15 @@
   .card-links a{color:var(--text);transition:.2s;display:inline-flex;align-items:center;gap:6px}
   .card-links a:hover{color:var(--accent)}
 
-  /* Contact */
   .contact{text-align:center}
   .contact .sec-title{margin-bottom:18px}
   .contact .lead{color:var(--muted);font-size:1.15rem;max-width:520px;margin:0 auto 34px}
   .contact-grid{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-  .contact-grid a{
-    border:1px solid var(--border);border-radius:12px;padding:16px 26px;background:var(--surface);
-    font-family:var(--font-mono);font-size:.92rem;transition:.2s;
-  }
+  .contact-grid a{border:1px solid var(--border);border-radius:12px;padding:16px 26px;background:var(--surface);font-family:var(--font-mono);font-size:.92rem;transition:.2s}
   .contact-grid a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px)}
 
   footer{border-top:1px solid var(--border);padding:34px 0;text-align:center;color:var(--muted);font-family:var(--font-mono);font-size:.82rem}
 
-  /* Reveal */
   .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
 
@@ -233,15 +201,12 @@
 <!-- ───────── NAV ───────── -->
 <header class="nav">
   <div class="wrap nav-inner">
-    <!-- >>> À REMPLIR : remplace [pn] par tes initiales <<< -->
-    <a href="#top" class="brand">[pn]<span class="dot">.</span>dev</a>
+    <a href="#top" class="brand">SC<span class="dot">.</span>dev</a>
     <nav class="nav-links">
       <a href="#apropos">À propos</a>
       <a href="#competences">Compétences</a>
       <a href="#projets">Projets</a>
       <a href="#contact">Contact</a>
-      <!-- >>> À REMPLIR : mets ton PDF à côté du fichier et href="cv.pdf" <<< -->
-      <a href="#cv-pdf" class="btn-pdf">CV PDF ↓</a>
     </nav>
     <button class="burger" aria-label="Menu" onclick="document.querySelector('.nav-links').style.display = (getComputedStyle(document.querySelector('.nav-links')).display==='none')?'flex':'none'">≡</button>
   </div>
@@ -251,9 +216,8 @@
 <main id="top">
 <section class="hero" style="border-top:0">
   <div class="wrap">
-    <div class="eyebrow reveal">Disponible pour une formation</div>
-    <!-- >>> À REMPLIR : ton prénom & nom <<< -->
-    <h1 class="reveal">[Prénom]<br><span class="line2">[Nom]</span></h1>
+    <div class="eyebrow reveal">Disponible immédiatement</div>
+    <h1 class="reveal">Steve<br><span class="line2">Couillez</span></h1>
     <p class="lead reveal">
       Futur <strong style="color:var(--text)">Développeur Web &amp; Web Mobile</strong>.
       Je transforme des idées en interfaces propres, rapides et accessibles —
@@ -264,10 +228,8 @@
       <a href="#contact" class="btn btn-ghost">Me contacter</a>
     </div>
     <div class="socials reveal">
-      <!-- >>> À REMPLIR : tes vrais liens <<< -->
-      <a href="#" target="_blank" rel="noopener">↗ GitHub</a>
-      <a href="#" target="_blank" rel="noopener">↗ LinkedIn</a>
-      <a href="mailto:ton.email@exemple.fr">↗ Email</a>
+      <a href="https://github.com/CouillezSteve" target="_blank" rel="noopener">↗ GitHub</a>
+      <a href="mailto:stevecouillez@gmail.com">↗ Email</a>
     </div>
 
     <div class="terminal reveal">
@@ -287,28 +249,29 @@
     <h2 class="sec-title reveal">Qui je suis</h2>
     <div class="about-grid">
       <div class="reveal">
-        <!-- >>> À REMPLIR : raconte ton parcours en 2-3 paragraphes <<< -->
         <p>
-          [Présente-toi en quelques lignes : ton déclic pour le code, ce qui te motive,
-          ce que tu aimes construire. Reste simple et sincère — un jury de formation
-          préfère l'authenticité à un discours marketing.]
+          Je m'appelle Steve et je vis à Raimbeaucourt. Le développement web, c'est l'idée
+          que j'adore : partir d'une page blanche et la transformer en quelque chose de
+          concret, visible et utilisable par tout le monde.
+          <strong>[Ajoute ici ton petit déclic perso — ce qui t'a donné envie de coder.]</strong>
         </p>
         <p>
           J'ai suivi une <strong>première formation intensive de 5 semaines</strong> en
-          développement web, pendant laquelle j'ai posé mes bases : structurer une page,
-          la styliser et la rendre interactive. [Précise ce que tu y as appris / réalisé.]
+          développement web : j'y ai posé mes bases — structurer une page en HTML, la mettre
+          en forme en CSS et la rendre vivante avec JavaScript. Depuis, je multiplie les
+          projets pour progresser concrètement.
         </p>
         <p>
-          Aujourd'hui je veux approfondir et décrocher le titre
-          <strong>Développeur Web &amp; Web Mobile</strong> pour en faire mon métier.
+          Mon objectif est clair : décrocher le titre
+          <strong>Développeur Web &amp; Web Mobile</strong> et en faire mon métier.
+          Je suis disponible immédiatement pour intégrer une formation.
         </p>
       </div>
       <div class="facts reveal">
-        <!-- >>> À REMPLIR <<< -->
-        <div class="fact"><div class="k">Localisation</div><div class="v">[Ta ville], France</div></div>
-        <div class="fact"><div class="k">Objectif</div><div class="v">Formation DWWM (Bac+2)</div></div>
+        <div class="fact"><div class="k">Localisation</div><div class="v">Raimbeaucourt, France</div></div>
+        <div class="fact"><div class="k">Objectif</div><div class="v">Développeur Web &amp; Web Mobile</div></div>
         <div class="fact"><div class="k">Statut</div><div class="v">Disponible immédiatement</div></div>
-        <div class="fact"><div class="k">Langues</div><div class="v">Français · Anglais [niveau]</div></div>
+        <div class="fact"><div class="k">Langues</div><div class="v">Français · Anglais (notions)</div></div>
       </div>
     </div>
   </div>
@@ -327,7 +290,6 @@
         <span class="chip">CSS3</span>
         <span class="chip">JavaScript</span>
         <span class="chip">Responsive design</span>
-        <!-- >>> ajoute/retire selon ce que tu maîtrises <<< -->
       </div>
     </div>
 
@@ -336,15 +298,12 @@
       <div class="chips">
         <span class="chip">Git &amp; GitHub</span>
         <span class="chip">VS Code</span>
-        <span class="chip">npm</span>
-        <span class="chip">Figma [si applicable]</span>
       </div>
     </div>
 
     <div class="skill-block reveal">
       <h3>EN APPRENTISSAGE</h3>
       <div class="chips">
-        <!-- techno que tu vises pendant la formation -->
         <span class="chip learning">React</span>
         <span class="chip learning">PHP</span>
         <span class="chip learning">SQL</span>
@@ -360,11 +319,29 @@
     <div class="sec-tag reveal">// 03 — Projets</div>
     <h2 class="sec-title reveal">Ce que j'ai construit</h2>
     <div class="projects">
-      <!-- >>> À REMPLIR : 2 à 4 projets, même petits. Un projet réel >> dix promesses <<< -->
+
       <article class="card reveal">
         <div class="num">01</div>
-        <h3>[Nom du projet]</h3>
-        <p>[Décris en 1-2 phrases : à quoi ça sert, ce que tu as appris en le faisant.]</p>
+        <h3>WydraxOnRoad.fr</h3>
+        <p>
+          Site web conçu et mis en ligne de A à Z : de la maquette à la mise en production
+          (hébergement, nom de domaine, déploiement).
+          <!-- [Précise en une phrase ce que présente le site.] -->
+        </p>
+        <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        <div class="card-links">
+          <a href="https://wydraxonroad.fr" target="_blank" rel="noopener">↗ Voir le site</a>
+          <a href="#" target="_blank" rel="noopener">⌥ Code</a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="num">02</div>
+        <h3>Loading Screen — Serveur FiveM</h3>
+        <p>
+          Écran de chargement personnalisé pour un serveur FiveM (GTA&nbsp;V RP) : une
+          interface animée affichée au lancement du jeu, réalisée en HTML, CSS et JavaScript.
+        </p>
         <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
         <div class="card-links">
           <a href="#" target="_blank" rel="noopener">↗ Démo</a>
@@ -373,26 +350,19 @@
       </article>
 
       <article class="card reveal">
-        <div class="num">02</div>
-        <h3>[Nom du projet]</h3>
-        <p>[Ex : une app météo qui interroge une API publique, un mini-jeu, une landing page...]</p>
-        <div class="tags"><span>JavaScript</span><span>API</span></div>
+        <div class="num">03</div>
+        <h3>GMC-Informatique.fr</h3>
+        <p>
+          Site web réalisé et mis en ligne pour GMC Informatique.
+          <!-- [Précise en une phrase : vitrine de l'activité, présentation des services, formulaire de contact…] -->
+        </p>
+        <div class="tags"><span>HTML</span><span>CSS</span></div>
         <div class="card-links">
-          <a href="#" target="_blank" rel="noopener">↗ Démo</a>
+          <a href="https://gmc-informatique.fr" target="_blank" rel="noopener">↗ Voir le site</a>
           <a href="#" target="_blank" rel="noopener">⌥ Code</a>
         </div>
       </article>
 
-      <article class="card reveal">
-        <div class="num">03</div>
-        <h3>[Nom du projet]</h3>
-        <p>[Un exercice marquant de ta formation de 5 semaines, retravaillé proprement.]</p>
-        <div class="tags"><span>HTML</span><span>CSS</span></div>
-        <div class="card-links">
-          <a href="#" target="_blank" rel="noopener">↗ Démo</a>
-          <a href="#" target="_blank" rel="noopener">⌥ Code</a>
-        </div>
-      </article>
     </div>
   </div>
 </section>
@@ -404,10 +374,8 @@
     <h2 class="sec-title reveal">On échange&nbsp;?</h2>
     <p class="lead reveal">Une formation, une question, un projet&nbsp;? Je réponds vite.</p>
     <div class="contact-grid reveal">
-      <!-- >>> À REMPLIR <<< -->
-      <a href="mailto:ton.email@exemple.fr">✉ ton.email@exemple.fr</a>
-      <a href="#" target="_blank" rel="noopener">⌥ GitHub</a>
-      <a href="#" target="_blank" rel="noopener">in LinkedIn</a>
+      <a href="mailto:stevecouillez@gmail.com">✉ stevecouillez@gmail.com</a>
+      <a href="https://github.com/CouillezSteve" target="_blank" rel="noopener">⌥ GitHub</a>
     </div>
   </div>
 </section>
@@ -415,18 +383,15 @@
 
 <footer>
   <div class="wrap">
-    © <span id="year"></span> [Prénom Nom] — Codé à la main, hébergé sur GitHub Pages.
+    © <span id="year"></span> Steve Couillez — Codé à la main, hébergé sur GitHub Pages.
   </div>
 </footer>
 
 <script>
-  // Année auto
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Effet "machine à écrire" dans le terminal
   (function(){
     var el = document.getElementById('typed');
-    // >>> À REMPLIR : la phrase qui te décrit <<<
     var text = "Développeur Web & Web Mobile en devenir";
     var i = 0;
     function type(){
@@ -436,7 +401,6 @@
     else { el.textContent = text; }
   })();
 
-  // Apparition au scroll
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
