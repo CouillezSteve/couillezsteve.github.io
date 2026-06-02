@@ -3,10 +3,6 @@
   ════════════════════════════════════════════════════════════════
   CV / PORTFOLIO — Steve Couillez · Développeur Web & Web Mobile
   ────────────────────────────────────────────────────────────────
-  À VÉRIFIER / COMPLÉTER :
-   - Cherche les [crochets] restants et complète-les.
-   - Remplace les liens href="#" par tes vraies URL (démos / dépôts).
-   - Pour le projet GMC, précise en une phrase ce que fait le site.
   POUR METTRE À JOUR LE SITE :
    - Édite ce fichier sur GitHub (icône crayon) ou ré-uploade-le.
    - Garde bien le nom  index.html . Pages redéploie tout seul (~1 min).
@@ -92,8 +88,9 @@
   .nav-links a:hover{color:var(--text)}
   .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--accent);transition:width .25s}
   .nav-links a:hover::after{width:100%}
-  .burger{display:none;background:none;border:0;color:var(--text);font-size:1.4rem;cursor:pointer}
+  .burger{display:none;background:none;border:0;color:var(--text);font-size:1.5rem;line-height:1;cursor:pointer;padding:6px 4px}
 
+  .hero{padding:clamp(70px,12vw,150px) 0 80px}
   .eyebrow{
     font-family:var(--font-mono);font-size:.8rem;color:var(--accent);
     letter-spacing:2px;text-transform:uppercase;margin-bottom:22px;
@@ -116,7 +113,7 @@
   .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(215,255,62,.25)}
   .btn-ghost{border-color:var(--border-strong);color:var(--text)}
   .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
-  .socials{display:flex;gap:18px}
+  .socials{display:flex;gap:18px;flex-wrap:wrap}
   .socials a{color:var(--muted);font-family:var(--font-mono);font-size:.85rem;transition:.2s}
   .socials a:hover{color:var(--accent)}
 
@@ -125,12 +122,12 @@
     background:var(--surface);box-shadow:0 30px 60px -30px rgba(0,0,0,.8);max-width:620px;
   }
   .term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--border);background:var(--surface-2)}
-  .term-bar i{width:12px;height:12px;border-radius:50%;display:block}
+  .term-bar i{width:12px;height:12px;border-radius:50%;display:block;flex:none}
   .term-bar i:nth-child(1){background:#ff5f57}
   .term-bar i:nth-child(2){background:#febc2e}
   .term-bar i:nth-child(3){background:#28c840}
   .term-bar span{margin-left:8px;font-family:var(--font-mono);font-size:.78rem;color:var(--muted)}
-  .term-body{padding:20px 22px;font-family:var(--font-mono);font-size:.92rem;line-height:1.9}
+  .term-body{padding:20px 22px;font-family:var(--font-mono);font-size:.92rem;line-height:1.9;word-break:break-word}
   .term-body .prompt{color:var(--accent)}
   .term-body .out{color:var(--muted)}
   #typed{color:var(--text)}
@@ -156,7 +153,7 @@
   .chip:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
   .chip.learning{border-style:dashed;color:var(--muted)}
 
-  .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+  .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:22px}
   .card{border:1px solid var(--border);border-radius:16px;background:var(--surface);padding:26px;transition:.25s;position:relative;overflow:hidden}
   .card::before{content:"";position:absolute;inset:0;background:var(--accent-dim);opacity:0;transition:.25s}
   .card:hover{transform:translateY(-5px);border-color:var(--border-strong)}
@@ -167,7 +164,7 @@
   .card p{color:var(--muted);font-size:.96rem;margin-bottom:18px}
   .tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
   .tags span{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);border:1px solid var(--border);padding:3px 9px;border-radius:6px}
-  .card-links{display:flex;gap:18px;font-family:var(--font-mono);font-size:.85rem}
+  .card-links{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--font-mono);font-size:.85rem}
   .card-links a{color:var(--text);transition:.2s;display:inline-flex;align-items:center;gap:6px}
   .card-links a:hover{color:var(--accent)}
 
@@ -175,7 +172,7 @@
   .contact .sec-title{margin-bottom:18px}
   .contact .lead{color:var(--muted);font-size:1.15rem;max-width:520px;margin:0 auto 34px}
   .contact-grid{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-  .contact-grid a{border:1px solid var(--border);border-radius:12px;padding:16px 26px;background:var(--surface);font-family:var(--font-mono);font-size:.92rem;transition:.2s}
+  .contact-grid a{border:1px solid var(--border);border-radius:12px;padding:16px 26px;background:var(--surface);font-family:var(--font-mono);font-size:.92rem;transition:.2s;word-break:break-word}
   .contact-grid a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px)}
 
   footer{border-top:1px solid var(--border);padding:34px 0;text-align:center;color:var(--muted);font-family:var(--font-mono);font-size:.82rem}
@@ -183,12 +180,52 @@
   .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
 
+  /* ───────── MOBILE ───────── */
   @media(max-width:760px){
-    .nav-links{display:none}
     .burger{display:block}
-    .about-grid{grid-template-columns:1fr}
-    .hero h1{font-size:clamp(2.4rem,12vw,3.4rem)}
+
+    /* Menu déroulant plein écran sous la barre */
+    .nav-links{
+      display:none;
+      position:absolute;
+      top:100%; left:0; right:0;
+      flex-direction:column;
+      align-items:stretch;
+      gap:0;
+      background:rgba(10,10,12,.98);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--border);
+      padding:4px 24px 14px;
+    }
+    .nav-links.open{display:flex}
+    .nav-links a{
+      padding:15px 2px;
+      font-size:1rem;
+      color:var(--text);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-links a:last-child{border-bottom:0}
+    .nav-links a::after{display:none}
+
+    .hero{padding:60px 0 50px}
+    .hero h1{font-size:clamp(2.4rem,13vw,3.4rem)}
+    .terminal{margin-top:38px}
+    section{padding:60px 0}
+    .about-grid{grid-template-columns:1fr;gap:30px}
+    .sec-title{margin-bottom:28px}
   }
+
+  @media(max-width:430px){
+    .wrap{padding:0 18px}
+    .hero-cta{gap:10px}
+    .hero-cta .btn{flex:1 1 auto;justify-content:center}
+    .btn{padding:13px 18px;font-size:.85rem}
+    .term-body{padding:16px 16px;font-size:.85rem}
+    .card{padding:22px}
+    .contact-grid{flex-direction:column}
+    .contact-grid a{text-align:center}
+  }
+
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
     .reveal{opacity:1;transform:none}
@@ -201,13 +238,13 @@
 <header class="nav">
   <div class="wrap nav-inner">
     <a href="#top" class="brand">SC<span class="dot">.</span>dev</a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="navLinks">
       <a href="#apropos">À propos</a>
       <a href="#competences">Compétences</a>
       <a href="#projets">Projets</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button class="burger" aria-label="Menu" onclick="document.querySelector('.nav-links').style.display = (getComputedStyle(document.querySelector('.nav-links')).display==='none')?'flex':'none'">≡</button>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">≡</button>
   </div>
 </header>
 
@@ -387,6 +424,22 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  // Menu mobile : ouverture / fermeture propre
+  (function(){
+    var burger = document.getElementById('burger');
+    var nav = document.getElementById('navLinks');
+    if(!burger || !nav) return;
+    function close(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); burger.textContent='≡'; }
+    burger.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.textContent = open ? '✕' : '≡';
+    });
+    // Fermer le menu après avoir cliqué sur un lien
+    nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+  })();
+
+  // Effet "machine à écrire"
   (function(){
     var el = document.getElementById('typed');
     var text = "Développeur Web & Web Mobile en devenir";
@@ -398,6 +451,7 @@
     else { el.textContent = text; }
   })();
 
+  // Apparition au scroll
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
