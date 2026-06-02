@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Loading...</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Slideshow -->
+    <div id="bg"></div>
+    <div id="slideDots" class="slide-dots"></div>
+
+    <div class="page">
+
+
+        <!-- ══ 3 CARDS ══ -->
+        <div class="cards-row">
+
+            <!-- ① Règlements -->
+            <div class="card card-rules">
+                <div class="card-label">Règlements</div>
+                <div class="rules-scroll" id="rulesList"></div>
+            </div>
+
+            <!-- ② Jeu Snake -->
+            <div class="card card-game">
+                <div class="card-label">Mini-jeu</div>
+                <div class="game-title">ROLEPLAY SERVER</div>
+
+                <div class="hud">
+                    <div class="hud-cell">
+                        <div class="hud-l">Score</div>
+                        <div class="hud-v" id="sc">0</div>
+                    </div>
+                    <div class="hud-sep"></div>
+                    <div class="hud-cell">
+                        <div class="hud-l">Meilleur</div>
+                        <div class="hud-v" id="bst">0</div>
+                    </div>
+                    <div class="hud-sep"></div>
+                    <div class="hud-cell">
+                        <div class="hud-l">Niveau</div>
+                        <div class="hud-v" id="lv">1</div>
+                    </div>
+                </div>
+
+                <div class="canvas-wrap">
+                    <canvas id="c" width="560" height="380"></canvas>
+                    <div class="overlay" id="ov">
+                        <div class="ov-s" id="ovS">Appuyez pour commencer</div>
+                        <div class="ov-score" id="ovSc" style="display:none"></div>
+                        <button class="btn" id="btn" onclick="play()">JOUER</button>
+                    </div>
+                </div>
+
+                <div class="hint">
+                    <span class="k">↑↓←→</span> / <span class="k">ZQSD</span>
+                    &nbsp;·&nbsp; <span class="k">Espace</span> pause
+                </div>
+                <div class="game-sub">Chargement trop long ? Passe le temps avec ce Mini-Jeu !</div>
+            </div>
+
+            <!-- ③ Staff + Annonces + Événements -->
+            <div class="card card-staff">
+                <div class="staff-tabs">
+                    <button class="stab on" onclick="staffTab('team', this)">Équipe</button>
+                    <button class="stab" onclick="staffTab('news', this)">Annonces</button>
+                    <button class="stab" onclick="staffTab('events', this)">Événements</button>
+                </div>
+                <div id="panelTeam" class="staff-scroll"></div>
+                <div id="panelNews" class="news-scroll" style="display:none"></div>
+                <div id="panelEvents" class="events-scroll" style="display:none"></div>
+            </div>
+
+        </div><!-- /cards-row -->
+
+    </div><!-- /page -->
+
+    <!-- Bottom bar -->
+    <footer class="bottombar">
+        <div class="prog-label">Chargement</div>
+        <div class="prog-wrap">
+            <div class="prog-row">
+                <div class="prog-track">
+                    <div class="prog-fill" id="fill" style="width:0%"></div>
+                </div>
+                <div class="prog-pct" id="pct">0%</div>
+            </div>
+            <div class="prog-steps" id="steps"></div>
+        </div>
+        <div class="bottom-discord">
+            <span class="bottom-discord-icon"><i class="fa-brands fa-discord"></i></span>
+            <span class="bottom-discord-text" id="serverDiscord">discord.gg/...</span>
+        </div>
+    </footer>
+
+    <!-- Credit -->
+    <div class="credit">
+        <div class="credit-by">Créé par</div>
+        <div class="credit-name">Steve</div>
+    </div>
+
+    <!-- Music Player flottant -->
+    <div class="music-player" id="musicPlayer">
+        <div class="music-info">
+            <div class="music-title" id="mTitle">—</div>
+            <div class="music-artist" id="mArtist">—</div>
+        </div>
+        <div class="music-controls">
+            <button class="mc-btn" onclick="musicPrev()"><i class="fa-solid fa-backward-step"></i></button>
+            <button class="mc-btn mc-play" onclick="musicToggle()"><i class="fa-solid fa-play"
+                    id="mPlayIcon"></i></button>
+            <button class="mc-btn" onclick="musicNext()"><i class="fa-solid fa-forward-step"></i></button>
+        </div>
+        <div class="music-vol">
+            <i class="fa-solid fa-volume-low"></i>
+            <input type="range" min="0" max="100" value="40" oninput="musicVolChange(this.value)">
+            <i class="fa-solid fa-volume-high"></i>
+        </div>
+    </div>
+
+    <!-- ✏️ Modifiez config.js pour personnaliser le serveur -->
+    <script src="assets/js/config.js"></script>
+    <!-- ⚠️ Ne pas modifier core.js -->
+    <script src="assets/js/core.js"></script>
+</body>
+
+</html>
