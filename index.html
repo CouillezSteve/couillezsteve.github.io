@@ -4,7 +4,7 @@
   CV / PORTFOLIO — Steve Couillez · Développeur Web & Web Mobile
   ────────────────────────────────────────────────────────────────
   POUR METTRE À JOUR LE SITE :
-   - Édite ce fichier sur GitHub ou ré-uploade-le.
+   - Édite ce fichier sur GitHub (icône crayon) ou ré-uploade-le.
    - Garde bien le nom  index.html . Pages redéploie tout seul (~1 min).
   ════════════════════════════════════════════════════════════════
 -->
@@ -14,6 +14,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Steve Couillez — Développeur Web &amp; Web Mobile</title>
 <meta name="description" content="CV en ligne de Steve Couillez, en formation Développeur Web & Web Mobile." />
+
+<!-- Couleur de l'onglet (mobile) + favicon -->
+<meta name="theme-color" content="#0a0a0c">
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230a0a0c'/><text x='32' y='33' dy='.35em' font-family='Arial,sans-serif' font-size='30' font-weight='700' fill='%23d7ff3e' text-anchor='middle'>SC</text></svg>">
+
+<!-- Aperçu au partage (Open Graph / Twitter) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Steve Couillez — Développeur Web &amp; Web Mobile">
+<meta property="og:description" content="Portfolio de Steve Couillez : projets, compétences et CV, en route vers le titre Développeur Web & Web Mobile.">
+<meta property="og:url" content="https://couillezsteve.github.io/">
+<meta property="og:image" content="https://couillezsteve.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Steve Couillez — Développeur Web &amp; Web Mobile">
+<meta name="twitter:description" content="Portfolio de Steve Couillez : projets, compétences et CV.">
+<meta name="twitter:image" content="https://couillezsteve.github.io/og.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,6 +105,9 @@
   .nav-links a:hover{color:var(--text)}
   .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--accent);transition:width .25s}
   .nav-links a:hover::after{width:100%}
+  .nav-links a.active{color:var(--text)}
+  .nav-links a.active::after{width:100%}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
   .burger{display:none;background:none;border:0;color:var(--text);font-size:1.5rem;line-height:1;cursor:pointer;padding:6px 4px}
 
   .hero{padding:clamp(28px,4vw,52px) 0 80px}
@@ -117,6 +137,7 @@
   .socials a{color:var(--muted);font-family:var(--font-mono);font-size:.85rem;transition:.2s}
   .socials a:hover{color:var(--accent)}
 
+  /* Carte code (remplace le terminal) */
   .terminal{
     margin-top:54px;border:1px solid var(--border);border-radius:14px;overflow:hidden;
     background:var(--surface);box-shadow:0 30px 60px -30px rgba(0,0,0,.8);max-width:620px;
@@ -127,12 +148,28 @@
   .term-bar i:nth-child(2){background:#febc2e}
   .term-bar i:nth-child(3){background:#28c840}
   .term-bar span{margin-left:8px;font-family:var(--font-mono);font-size:.78rem;color:var(--muted)}
-  .term-body{padding:20px 22px;font-family:var(--font-mono);font-size:.92rem;line-height:1.9;word-break:break-word}
-  .term-body .prompt{color:var(--accent)}
-  .term-body .out{color:var(--muted)}
-  #typed{color:var(--text)}
-  .cursor{display:inline-block;width:9px;height:1.05em;background:var(--accent);vertical-align:-2px;animation:blink 1s steps(1) infinite}
-  @keyframes blink{50%{opacity:0}}
+  .term-body{padding:20px 22px;font-family:var(--font-mono);font-size:.92rem;line-height:1.85;word-break:break-word}
+  .term-body .ind{padding-left:1.6em}
+  .tk{color:#c792ea}
+  .tv{color:#82aaff}
+  .tp{color:#7fdbca}
+  .ts{color:#c3e88d}
+  .tb{color:#f78c6c}
+  .tx{color:#6b6b76}
+
+  /* Carte « En ce moment » */
+  .now-card{
+    margin-top:54px;max-width:620px;
+    border:1px solid var(--border);border-radius:14px;background:var(--surface);
+    box-shadow:0 30px 60px -30px rgba(0,0,0,.8);padding:22px 26px;
+  }
+  .now-head{display:flex;align-items:center;gap:11px;margin-bottom:16px}
+  .now-dot{width:10px;height:10px;border-radius:50%;background:#28c840;animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(40,200,64,.5)}70%{box-shadow:0 0 0 9px rgba(40,200,64,0)}100%{box-shadow:0 0 0 0 rgba(40,200,64,0)}}
+  .now-head b{font-family:var(--font-mono);font-weight:500;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent)}
+  .now-card ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .now-card li{display:flex;gap:11px;color:var(--text);font-size:1.02rem;line-height:1.5}
+  .now-card li::before{content:"→";color:var(--accent);flex:none;font-family:var(--font-mono)}
 
   section{padding:86px 0;border-top:1px solid var(--border)}
   .sec-tag{font-family:var(--font-mono);color:var(--accent);font-size:.82rem;letter-spacing:1px;margin-bottom:14px}
@@ -177,6 +214,18 @@
 
   footer{border-top:1px solid var(--border);padding:34px 0;text-align:center;color:var(--muted);font-family:var(--font-mono);font-size:.82rem}
 
+  /* Bouton remonter en haut */
+  .to-top{
+    position:fixed;right:22px;bottom:22px;z-index:60;
+    width:48px;height:48px;border-radius:50%;
+    border:1px solid var(--border-strong);background:rgba(20,20,25,.85);
+    backdrop-filter:blur(8px);color:var(--text);font-size:1.25rem;line-height:1;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;pointer-events:none;transform:translateY(12px);transition:.25s;
+  }
+  .to-top.show{opacity:1;pointer-events:auto;transform:none}
+  .to-top:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
   .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
 
@@ -207,9 +256,9 @@
     .nav-links a:last-child{border-bottom:0}
     .nav-links a::after{display:none}
 
-    .hero{padding:60px 0 50px}
+    .hero{padding:34px 0 50px}
     .hero h1{font-size:clamp(2.4rem,13vw,3.4rem)}
-    .terminal{margin-top:38px}
+    .terminal,.now-card{margin-top:38px}
     section{padding:60px 0}
     .about-grid{grid-template-columns:1fr;gap:30px}
     .sec-title{margin-bottom:28px}
@@ -220,10 +269,11 @@
     .hero-cta{gap:10px}
     .hero-cta .btn{flex:1 1 auto;justify-content:center}
     .btn{padding:13px 18px;font-size:.85rem}
-    .term-body{padding:16px 16px;font-size:.85rem}
+    .term-body{padding:16px 16px;font-size:.82rem}
     .card{padding:22px}
     .contact-grid{flex-direction:column}
     .contact-grid a{text-align:center}
+    .to-top{right:14px;bottom:14px;width:44px;height:44px}
   }
 
   @media(prefers-reduced-motion:reduce){
@@ -270,12 +320,13 @@
       <a href="mailto:stevecouillez@gmail.com">↗ Email</a>
     </div>
 
-    <div class="terminal reveal">
-      <div class="term-bar"><i></i><i></i><i></i><span>~/portfolio — SC</span></div>
-      <div class="term-body">
-        <div><span class="prompt">visiteur@cv</span> ~ <span class="out">whoami</span></div>
-        <div><span id="typed"></span><span class="cursor"></span></div>
-      </div>
+    <!-- Carte « En ce moment » -->
+    <div class="now-card reveal">
+      <div class="now-head"><span class="now-dot"></span><b>En ce moment</b></div>
+      <ul>
+        <li>Je code presque tous les jours pour monter en niveau.</li>
+        <li>Je peaufine mes projets et j'en prépare de nouveaux.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -361,7 +412,6 @@
         <p>
           Site web conçu et mis en ligne de A à Z : de la maquette à la mise en production
           (hébergement, nom de domaine, déploiement).
-          <!-- [Précise en une phrase ce que présente le site.] -->
         </p>
         <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
         <div class="card-links">
@@ -420,6 +470,9 @@
   </div>
 </footer>
 
+<!-- Bouton remonter en haut -->
+<button class="to-top" id="toTop" aria-label="Remonter en haut de la page">↑</button>
+
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -438,16 +491,38 @@
     nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
   })();
 
-  // Effet "machine à écrire"
+  // Bouton « remonter en haut »
   (function(){
-    var el = document.getElementById('typed');
-    var text = "Développeur Web & Web Mobile en devenir";
-    var i = 0;
-    function type(){
-      if(i <= text.length){ el.textContent = text.slice(0, i); i++; setTimeout(type, 55); }
+    var btn = document.getElementById('toTop');
+    if(!btn) return;
+    function onScroll(){
+      if(window.scrollY > 500){ btn.classList.add('show'); }
+      else { btn.classList.remove('show'); }
     }
-    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){ setTimeout(type, 600); }
-    else { el.textContent = text; }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+    btn.addEventListener('click', function(){
+      window.scrollTo({ top:0, behavior:'smooth' });
+    });
+  })();
+
+  // Lien de menu actif selon la section visible
+  (function(){
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+    var map = {};
+    links.forEach(function(a){ var id = a.getAttribute('href').slice(1); if(id){ map[id] = a; } });
+    var sections = Object.keys(map).map(function(id){ return document.getElementById(id); }).filter(Boolean);
+    if(sections.length){
+      var spy = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){
+            links.forEach(function(a){ a.classList.remove('active'); });
+            if(map[e.target.id]){ map[e.target.id].classList.add('active'); }
+          }
+        });
+      },{rootMargin:'-45% 0px -50% 0px', threshold:0});
+      sections.forEach(function(s){ spy.observe(s); });
+    }
   })();
 
   // Apparition au scroll
